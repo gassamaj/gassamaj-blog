@@ -10,4 +10,4 @@
        echo "Success" . $connection->host_info;
    }
    
-   $connection->
+   $connection->close();
