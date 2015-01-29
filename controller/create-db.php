@@ -26,4 +26,8 @@
               . "post text NOT,"
               . "PRIMARY KEY (id))");
                
-       $connection->close();
+      if($query) {
+        echo "Successfully created table: posts";
+      }
+      
+      $connection->close();
