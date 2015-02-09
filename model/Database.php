@@ -6,7 +6,11 @@ class Database {
     private $password;
     private $database;
     
-    public function __construct () {
-           
-    }
+    public function __construct ($host, $username, $password, $database) {
+       $this->host = $host;
+       $this->username = $username;
+       $this->password = $password;
+       $this->database = $database;
+       }
 }
+
