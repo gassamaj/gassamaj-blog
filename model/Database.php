@@ -14,11 +14,15 @@ class Database {
        }
 
        public function openConnection() {
-           
+           $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);
        }
     
        public function closeConnection () {
            
        }
-     }
+     
+       public function query ($string) {
+           
+       }
+       }
 
