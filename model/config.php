@@ -1,4 +1,6 @@
 <?php
+    require_once
+
      $path = "/gassamaj-blog/";
      
      $host = "localhost";
