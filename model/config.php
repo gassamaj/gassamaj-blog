@@ -1,5 +1,5 @@
 <?php
-    require_once
+    require_once(__DIR__ . "/../model/Database.php");
 
      $path = "/gassamaj-blog/";
      
