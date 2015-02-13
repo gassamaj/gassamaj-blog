@@ -7,7 +7,8 @@ class Database {
     private $username;
     private $password;
     private $database;
-
+    public  $error;
+    
     public function __construct($host, $username, $password, $database) {
         $this->host = $host;
         $this->username = $username;
@@ -42,20 +43,23 @@ class Database {
     }
 
     public function closeconnection() {
-
-        if (isset($this->connection)) {
+    if (isset($this->connection)) {
             $this->connection->close();
         }
     }
 
     public function query($string) {
-        $this->connection();
+        $this->Openconnection();
 
-        $query = $this->connetion->query($string);
+        $query = $this->connection->query($string);
 
+        if(!$query) {
+           $this->error = $this->connection->error;
+        }
+        
         $this->closeConnection();
 
-        return query;
+        return $query;
     }
 
 }
