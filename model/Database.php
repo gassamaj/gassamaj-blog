@@ -13,6 +13,24 @@ class Database {
         $this->username = $username;
         $this->password = $password;
         $this->database = $database;
+
+        $this->connection = new mysqli ($host, $username, $password);
+        
+        if ($this->connection->connect_error) {
+            die("<p>Error: " . $this->connection->connect_error . "</p>");
+        }
+
+        $exists = $this->connection->select_db($database);
+
+        if (!$exists) {
+            $query = $this->connection->query("CREATE DATABASE $database");
+
+            if ($query) {
+                echo "<p>Successfully created database: " . $database . "</p>";
+            }
+        } else {
+            echo "<p>Database already exists.</p>";
+        }
     }
 
     public function openConnection() {
@@ -31,14 +49,13 @@ class Database {
     }
 
     public function query($string) {
-       $this->connection();
+        $this->connection();
 
         $query = $this->connetion->query($string);
 
         $this->closeConnection();
-   
+
         return query;
-        
     }
-    
+
 }

@@ -1,7 +1,7 @@
 <?php
-    require_once(__DIR__ . "/../model/Database.php");
-
-     $path = "/gassamaj-blog/";
+    require_once(__DIR__ . "/database.php");
+    
+$path = "/gassamaj-blog/";
      
      $host = "localhost";
      $username = "root";
