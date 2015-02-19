@@ -6,7 +6,7 @@
      . "title varchar (255) NOT NULL,"
      . "post text NOT NULL,"
      . "PRIMARY KEY (id))");
-     
+   
      if ($query) {
          echo "<p>Successfully created table: posts</p>";
      }
