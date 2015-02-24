@@ -4,4 +4,4 @@
      $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
      $password = filter_input(INPUT_POST, "password", FILTEER_SANITIZE_STRING);
      
-     $query = $_SESSION["connection"]->query();
+     $query = $_SESSION["connection"]->query("SELECT salt, psssword FROM users WHERE username = '$username'");
